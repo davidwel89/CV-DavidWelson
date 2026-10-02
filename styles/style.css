@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+#content {
+    float: left;
+    width: 75%;
+}
+
+aside {
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+}
+
+main {
+    padding: 20px;
+    overflow: auto;
+}
+
+h2,
+h3 {
+    color: #4fc3f7;
+}
+
+nav li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 15px;
+}
+
+nav a {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    font-weight: bold;
+    color: #4fc3f7;
+}
+
+.profile {
+    text-align: center;
+}
+
+/* Memperbaiki struktur klik gambar profil */
+.profile figure a {
+    display: inline-block;
+}
+
+.profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    /* Gunakan pixel (px) untuk X agar lebih mudah dikontrol */
+    object-position: 10px 15%;
+
+    /* Opsional: Tambahkan scale jika gambar sudah mentok dan butuh ruang untuk digeser */
+    /* transform: scale(1.1); */
+
+    border: 3px solid #4fc3f7;
+}
+
+.featured-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    /* Gambar tidak terpotong */
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #333333;
+}
+
+.jumbotron {
+    font-size: 20px;
+    padding: 60px 20px;
+    background-color: #0d1b2a;
+    text-align: center;
+    color: #ffffff;
+    border-bottom: 2px solid #1b263b;
+}
+
+nav {
+    background-color: #1b263b;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 2px solid #4fc3f7;
+}
+
+footer {
+    padding: 20px;
+    color: #ffffff;
+    background-color: #0d1b2a;
+    text-align: center;
+    font-weight: bold;
+    border-top: 2px solid #1b263b;
+    clear: both;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th,
+table td {
+    padding: 12px 5px;
+    border-bottom: 1px solid #333333;
+}
+
+table th {
+    color: #4fc3f7;
+}
+
+/* --- KARTU LOMBA --- */
+.sub-card {
+    background-color: #272727;
+    border: 1px solid #444444;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.lomba-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    /* Gambar utuh, tidak terpotong */
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    border: 2px solid #4fc3f7;
+    display: block;
+}
+
+/* --- SLIDER FOTO (KIRI KANAN) --- */
+.img-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    max-width: 250px;
+    /* Membatasi area agar bisa di-scroll ke samping */
+    flex-shrink: 0;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+}
+
+.img-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.img-slider::-webkit-scrollbar-thumb {
+    background-color: #4fc3f7;
+    border-radius: 4px;
+}
+
+.img-slider::-webkit-scrollbar-track {
+    background-color: #1a1a1a;
+}
+
+.img-slider a {
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    display: inline-block;
+}
+
+.lomba-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #81d4fa;
+}
+
+.lomba-info p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #dcdcdc;
+}
+
+/* --- TAUTAN GAME SPACE WAR --- */
+.game-link {
+    color: #81d4fa;
+    /* Warna Biru Terang, Lolos Uji Kontras */
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-block;
+    margin-top: 10px;
+    min-height: 48px;
+    line-height: 48px;
+    transition: color 0.3s ease;
+}
+
+.game-link:hover {
+    color: #e1f5fe;
+}
+
+/* --- FITUR ZOOM GAMBAR (CSS LIGHTBOX) --- */
+.zoomable {
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.zoomable:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(79, 195, 247, 0.4);
+}
+
+.css-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal terbuka saat ID di-target oleh href */
+.css-lightbox:target {
+    display: flex;
+}
+
+/* Layer transparan untuk menutup modal jika diklik di luar gambar */
+.lightbox-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-out;
+}
+
+.css-lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1001;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    border: 2px solid #81d4fa;
+}
+
+.close-icon {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 1002;
+    text-decoration: none;
+    cursor: zoom-out;
+}
+
+.close-icon:hover {
+    color: #4fc3f7;
+}
+
+/* Mengatur teks poin (Skill & Bahasa) menjadi rata kiri */
+.profile section ul {
+    text-align: left;
+    padding-left: 40px;
+    /* Memberikan jarak standar agar peluru tidak menempel di tepi */
+}
+
+.profile section li {
+    text-align: left;
+    margin-bottom: 5px;
+    /* Memberikan sedikit ruang antar poin agar lebih rapi dibaca */
+}
+
+/* --- RESPONSIFITAS --- */
+@media screen and (max-width: 1000px) {
+
+    #content,
+    aside {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sub-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-slider {
+        max-width: 100%;
+        gap: 15px;
+    }
+
+    .lomba-img {
+        width: 180px;
+        height: 180px;
+    }
+}
