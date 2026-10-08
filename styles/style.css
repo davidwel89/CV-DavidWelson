@@ -347,6 +347,14 @@ table th {
     justify-content: center;
 }
 
+html {
+    /* Memberikan jarak gulir di atas agar tidak tertutup navbar */
+    scroll-padding-top: 80px;
+
+    /* Bonus: Membuat efek transisi gulir menjadi halus (tidak melompat kasar) */
+    scroll-behavior: smooth;
+}
+
 /* --- RESPONSIFITAS & MOBILE MENU --- */
 @media screen and (max-width: 1000px) {
 
