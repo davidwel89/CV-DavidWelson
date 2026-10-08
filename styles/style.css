@@ -34,6 +34,29 @@ h3 {
     color: #4fc3f7;
 }
 
+nav {
+    background-color: rgba(27, 38, 59, 0.85);
+    /* Warna dasar dengan transparansi */
+    backdrop-filter: blur(8px);
+    /* Efek blur kaca */
+    -webkit-backdrop-filter: blur(8px);
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 2px solid #4fc3f7;
+
+    /* KODE KUNCI UNTUK PINNED MENU */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    /* Memastikan menu selalu berada di lapisan paling depan */
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
 nav li {
     display: inline;
     list-style-type: none;
@@ -55,6 +78,12 @@ nav a {
 nav a:hover {
     font-weight: bold;
     color: #4fc3f7;
+}
+
+/* Menyembunyikan Checkbox dan Tombol Hamburger di Desktop */
+#menu-toggle,
+.hamburger {
+    display: none;
 }
 
 .profile {
@@ -109,13 +138,6 @@ nav a:hover {
     border-bottom: 2px solid #1b263b;
 }
 
-nav {
-    background-color: #1b263b;
-    text-align: center;
-    padding: 10px 0;
-    border-bottom: 2px solid #4fc3f7;
-}
-
 footer {
     padding: 20px;
     color: #ffffff;
@@ -131,6 +153,8 @@ table {
     text-align: left;
     border-collapse: collapse;
     margin-top: 15px;
+    table-layout: fixed;
+    /* Menjaga agar lebar tabel tidak melebihi kontainernya */
 }
 
 table th,
@@ -139,8 +163,16 @@ table td {
     border-bottom: 1px solid #333333;
 }
 
+/* Tambahkan blok ini untuk mencegah teks panjang menembus layar */
+table td {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
 table th {
     color: #4fc3f7;
+    width: 35%;
+    /* Memberikan porsi lebar tetap untuk judul baris agar rapi */
 }
 
 /* --- KARTU LOMBA --- */
@@ -308,7 +340,14 @@ table th {
     /* Memberikan sedikit ruang antar poin agar lebih rapi dibaca */
 }
 
-/* --- RESPONSIFITAS --- */
+.profile figure {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- RESPONSIFITAS & MOBILE MENU --- */
 @media screen and (max-width: 1000px) {
 
     #content,
@@ -332,5 +371,51 @@ table th {
     .lomba-img {
         width: 180px;
         height: 180px;
+    }
+
+    /* MODIFIKASI MOBILE NAVIGASI */
+    nav {
+        text-align: left;
+        /* Posisikan hamburger ke kiri */
+        padding: 10px 20px;
+    }
+
+    .hamburger {
+        display: inline-block;
+        font-size: 28px;
+        color: #ffffff;
+        cursor: pointer;
+        user-select: none;
+        line-height: 48px;
+    }
+
+    nav ul {
+        display: none;
+        /* Sembunyikan menu secara default */
+        flex-direction: column;
+        text-align: center;
+        background-color: #1b263b;
+        /* Warna solid agar teks bisa dibaca */
+        margin: 10px -20px -10px -20px;
+        /* Menyesuaikan jarak padding dari induknya */
+        padding: 0;
+    }
+
+    nav li {
+        display: block;
+        margin: 0;
+        border-top: 1px solid #333333;
+        /* Garis pembatas antar menu */
+    }
+
+    nav a {
+        display: block;
+        padding: 15px 0;
+        /* Memperluas area tap di HP */
+    }
+
+    /* Logika Checkbox Hack: Munculkan <ul> jika checkbox dicentang/diklik */
+    #menu-toggle:checked~ul {
+        display: flex;
     }
 }
