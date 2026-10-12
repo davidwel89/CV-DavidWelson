@@ -18,6 +18,12 @@ body {
     width: 75%;
 }
 
+#profil p {
+    text-align: justify;
+    line-height: 1.6;
+    /* Tambahan opsional: memberi jarak antar baris agar lebih nyaman dibaca */
+}
+
 aside {
     float: right;
     width: 25%;
@@ -42,7 +48,7 @@ nav {
     -webkit-backdrop-filter: blur(8px);
     text-align: center;
     padding: 15px 0;
-    border-bottom: 2px solid #4fc3f7;
+    border-bottom: 2px solid #ffffff;
 
     /* KODE KUNCI UNTUK PINNED MENU */
     position: sticky;
@@ -107,7 +113,7 @@ nav a:hover {
     /* Opsional: Tambahkan scale jika gambar sudah mentok dan butuh ruang untuk digeser */
     /* transform: scale(1.1); */
 
-    border: 3px solid #4fc3f7;
+    border: 3px solid #ffffff;
 }
 
 .featured-image {
@@ -195,7 +201,7 @@ table th {
     /* Gambar utuh, tidak terpotong */
     background-color: #1a1a1a;
     border-radius: 5px;
-    border: 2px solid #4fc3f7;
+    border: 2px solid #ffffff;
     display: block;
 }
 
@@ -216,7 +222,7 @@ table th {
 }
 
 .img-slider::-webkit-scrollbar-thumb {
-    background-color: #4fc3f7;
+    background-color: #ffffff;
     border-radius: 4px;
 }
 
@@ -269,7 +275,7 @@ table th {
 
 .zoomable:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(79, 195, 247, 0.4);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4);
 }
 
 .css-lightbox {
@@ -283,6 +289,7 @@ table th {
     z-index: 1000;
     justify-content: center;
     align-items: center;
+    padding-top: 80px;
 }
 
 /* Modal terbuka saat ID di-target oleh href */
@@ -308,12 +315,12 @@ table th {
     z-index: 1001;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-    border: 2px solid #81d4fa;
+    border: 2px solid #ffffff;
 }
 
 .close-icon {
     position: absolute;
-    top: 20px;
+    top: 90px;
     right: 35px;
     color: #ffffff;
     font-size: 40px;
@@ -324,7 +331,7 @@ table th {
 }
 
 .close-icon:hover {
-    color: #4fc3f7;
+    color: #cccccc;
 }
 
 /* Mengatur teks poin (Skill & Bahasa) menjadi rata kiri */
